@@ -17,7 +17,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.TextFlow?>
 
-<VBox prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="seedu.nuke.gui.controller.MainController">
+<VBox prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="seedu.nuke.gui.controller.MainController">
     <children>
         <MenuBar>
             <menus>
@@ -164,7 +164,7 @@
                         </VBox>
                         <VBox prefHeight="463.0" prefWidth="360.0" HBox.hgrow="ALWAYS">
                             <children>
-                                <TextFlow lineSpacing="1.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: lightgrey; -fx-border-radius: 3; -fx-background-color: white;" VBox.vgrow="ALWAYS">
+                                <TextFlow fx:id="consoleScreen" lineSpacing="1.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: lightgrey; -fx-border-radius: 3; -fx-background-color: white;" VBox.vgrow="ALWAYS">
                                     <padding>
                                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                     </padding>
