@@ -6,16 +6,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
-import seedu.nuke.command.CommandResult;
-import seedu.nuke.data.ModuleManager;
-import seedu.nuke.ui.Ui;
 
 import java.io.IOException;
 
 public class Main extends Application {
-    private CommandResult commandResult;
-    private ModuleManager moduleManager;
-    private Ui ui;
 
     public static void main(String[] args) {
         launch(args);
@@ -23,8 +17,6 @@ public class Main extends Application {
 
     @Override
     public void init() throws Exception {
-        this.moduleManager = new ModuleManager();
-        this.ui = new Ui();
         // Load modules and tasks
     }
 
@@ -35,8 +27,8 @@ public class Main extends Application {
         stage.setMinWidth(1000);
         stage.setMinHeight(600);
 
-
-        Parent mainRoot = FXMLLoader.load(getClass().getResource("resource/main.fxml"));
+        FXMLLoader sceneLoader = new FXMLLoader(getClass().getResource("resource/main.fxml"));
+        Parent mainRoot = sceneLoader.load();
         Scene main = new Scene(mainRoot);
 
         stage.setScene(main);
