@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 public class CheckModuleTasksDeadlineCommand extends Command {
 
-    public static final String COMMAND_WORD = "lst";
+    public static final String COMMAND_WORD = "mlst";
     public static final String MESSAGE_USAGE = COMMAND_WORD;
 
     private int moduleIndex;

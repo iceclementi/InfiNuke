@@ -16,7 +16,7 @@ public class CheckAllTasksDeadlineCommand extends Command{
     protected DataManager dataManager;
     private ArrayList<String> deadlines;
 
-    public static final String COMMAND_WORD = "lst";
+    public static final String COMMAND_WORD = "tlst";
     public static final String MESSAGE_USAGE = COMMAND_WORD;
 
     @Override

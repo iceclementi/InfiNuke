@@ -35,7 +35,7 @@ public class Parser {
      * @see seedu.nuke.ui.Ui
      * @see Command
      */
-    public Command parseCommand(String input) throws ModuleNotFoundException {
+    public Command parseCommand(String input) {
         final Matcher matcher = BASIC_COMMAND_FORMAT.matcher(input.trim());
         /*
         if (input.isEmpty()) {
@@ -67,8 +67,8 @@ public class Parser {
         case CheckAllTasksDeadlineCommand.COMMAND_WORD:
             return new CheckAllTasksDeadlineCommand();
 
-        case CheckModuleTasksDeadlineCommand.COMMAND_WORD:
-            return new CheckModuleTasksDeadlineCommand();
+//        case CheckModuleTasksDeadlineCommand.COMMAND_WORD:
+//            return new CheckModuleTasksDeadlineCommand(0);
 
         case ExitCommand.COMMAND_WORD:
             return new ExitCommand();
