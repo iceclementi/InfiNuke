@@ -5,6 +5,7 @@ import org.fusesource.jansi.AnsiConsole;
 import seedu.nuke.command.Command;
 import seedu.nuke.command.CommandResult;
 import seedu.nuke.command.ExitCommand;
+import seedu.nuke.data.DataManager;
 import seedu.nuke.data.ModuleLoader;
 import seedu.nuke.data.ModuleManager;
 import seedu.nuke.module.DummyModule;
@@ -14,6 +15,8 @@ import seedu.nuke.ui.Ui;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Scanner;
 
 import static org.fusesource.jansi.Ansi.ansi;
@@ -23,12 +26,14 @@ import static seedu.nuke.util.ExceptionMessage.*;
 public class Nuke {
     private CommandResult commandResult;
     private ModuleManager moduleManager;
-    public ArrayList<DummyModule> modules;
+    private DataManager dataManager;
+    public HashMap<String,String> modulesMap;
     private Ui ui;
 
     public Nuke() throws FileNotFoundException {
         moduleManager = new ModuleManager();
-        //modules = ModuleLoader.load("moduleList.json");
+        dataManager = new DataManager(moduleManager);
+        modulesMap  = ModuleLoader.load("moduleList.json");
     }
 
     /**
@@ -65,7 +70,8 @@ public class Nuke {
         try {
             // supplies the data the command will operate on.
             // if there is no file to load or the file is empty, setData will initialize a new taskManager system
-            command.setData(moduleManager);
+            //update the module manager as well as the data manager
+            command.setData(moduleManager, dataManager);
             // Execute according to the command itself
             commandResult = command.execute();
             // save the taskManager to a file

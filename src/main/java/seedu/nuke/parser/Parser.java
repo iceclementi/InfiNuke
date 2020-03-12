@@ -3,7 +3,10 @@ package seedu.nuke.parser;
 import seedu.nuke.command.Command;
 import seedu.nuke.command.ExitCommand;
 import seedu.nuke.command.*;
+import seedu.nuke.data.ModuleManager;
 import seedu.nuke.exception.ModuleNotFoundException;
+import seedu.nuke.module.Module;
+import seedu.nuke.task.Task;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -52,6 +55,9 @@ public class Parser {
 
         switch (commandWord) {
 
+        case ChangeModuleCommand.COMMAND_WORD:
+            return prepareChangeModuleCommand(parameters);
+
         case AddModuleCommand.COMMAND_WORD:
             return prepareAddModuleCommand(parameters);
 
@@ -67,14 +73,43 @@ public class Parser {
         case CheckAllTasksDeadlineCommand.COMMAND_WORD:
             return new CheckAllTasksDeadlineCommand();
 
-//        case CheckModuleTasksDeadlineCommand.COMMAND_WORD:
-//            return new CheckModuleTasksDeadlineCommand(0);
+        //case CheckModuleTasksDeadlineCommand.COMMAND_WORD:
+            //return new CheckModuleTasksDeadlineCommand();
+
+        case AddTaskCommand.COMMAND_WORD:
+            return prepareAddTaskCommand(parameters);
+
+        case DeleteTaskCommand.COMMAND_WORD:
+            return prepareDeleteTaskCommand(parameters);
 
         case ExitCommand.COMMAND_WORD:
             return new ExitCommand();
 
         default:
             return new IncorrectCommand(String.format(MESSAGE_INVALID_COMMAND_FORMAT, HelpCommand.MESSAGE_USAGE));
+        }
+    }
+
+    private Command prepareDeleteTaskCommand(String parameters) {
+        //
+        return null;
+    }
+
+    private Command prepareChangeModuleCommand(String parameters) {
+        //System.out.println(parameters);
+        if(ModuleManager.getModuleWithCode(parameters)!=null){
+            return new ChangeModuleCommand(ModuleManager.getModuleWithCode(parameters));
+        }
+        return new IncorrectCommand(MESSAGE_INVALID_COMMAND_FORMAT);
+    }
+
+    private Command prepareAddTaskCommand(String parameters) {
+        //todo
+        //add a very simple task (for testing)
+        if (Command.getCurrentModule()!= null){
+            return new AddTaskCommand(new Task(parameters));
+        } else {
+            return new IncorrectCommand("please go inside a Module!");
         }
     }
 
