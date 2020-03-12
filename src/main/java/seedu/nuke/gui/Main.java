@@ -23,7 +23,7 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         stage.setTitle("V \u2022 NUS");
-        stage.getIcons().add(new Image("seedu/nuke/gui/resource/image/venus_icon.png"));
+        stage.getIcons().add(new Image("image/venus_icon.png"));
         stage.setMinWidth(1000);
         stage.setMinHeight(600);
 
