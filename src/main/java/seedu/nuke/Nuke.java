@@ -14,7 +14,6 @@ import static seedu.nuke.util.ExceptionMessage.*;
 
 public class Nuke {
     private Ui ui;
-
     /**
      * Main entry-point for the java.duke.Duke application.
      */

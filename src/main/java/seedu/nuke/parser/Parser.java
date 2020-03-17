@@ -48,11 +48,7 @@ public class Parser {
      * <b>Note</b>: The user input has to start with a certain keyword (i.e. <i>command word</i>), otherwise an
      * <i>Invalid Command Exception</i> will be thrown.
      *
-<<<<<<< HEAD
-     * @param input The user input read by the <b>UI.java</b>
-=======
-     * @param input The user input read by the <b>UI</b>
->>>>>>> 2484d630e08b084a3f5eb693de42223dcfc363ae
+     * @param input The user input read by the <b>UI/b>
      * @return The <b>corresponding</b> command to be executed
      * @see seedu.nuke.ui.Ui
      * @see Command
