@@ -25,18 +25,6 @@ public class MainController implements Initializable {
     @FXML
     private ScrollPane consoleScreenScrollPane;
 
-    public TextField getConsole() {
-        return console;
-    }
-
-    public TextFlow getConsoleScreen() {
-        return consoleScreen;
-    }
-
-    public ScrollPane getConsoleScreenScrollPane() {
-        return consoleScreenScrollPane;
-    }
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         consoleScreen.setStyle("-fx-font-family: Consolas; -fx-font-size: 12pt");
