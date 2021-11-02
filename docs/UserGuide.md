@@ -42,7 +42,7 @@ div {
 
 # **Nuke User Guide** <small>v2.1</small>   
 By: `CS2113T-T13-2` Since: `Feb 2020` <small>    
-[Go to Webpage](https://ay1920s2-cs2113t-t13-2.github.io/tp/UserGuide.html)</small>     
+[Go to Webpage](https://iceclementi.github.io/InfiNuke/UserGuide.html)</small>     
   
 <br>    
   
