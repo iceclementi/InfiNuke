@@ -10,6 +10,6 @@ If you are an NUS student and have not tried out Nuke yet...
 What are you waiting for? Give Nuke a shot, and you will see how amazing it is!
 
 Useful links:
-* [User Guide](UserGuide.md)
-* [Developer Guide](DeveloperGuide.md)
-* [About Us](AboutUs.md)
+* [User Guide](https://iceclementi.github.io/InfiNuke/UserGuide.html)
+* [Developer Guide](https://iceclementi.github.io/InfiNuke/DeveloperGuide.html)
+* [About Us](https://iceclementi.github.io/InfiNuke/AboutUs.html)
